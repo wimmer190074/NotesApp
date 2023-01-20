@@ -1,18 +1,23 @@
-import sqlalchemy
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model import Base, Notes, Tags
 
-from model import Base, Note, Tag
+class Database:
+    def __init__(self):
+        self.engine = create_engine('sqlite:///notes_tags.db')
+        Base.metadata.create_all(self.engine)
+        self.Session = sessionmaker(bind=self.engine)
 
-def main():
-    """Run Main function."""
-    db_connection = sqlalchemy.create_engine("sqlite:///database.db")
-    Base.metadata.create_all(db_connection)
-    session_factory = sqlalchemy.orm.sessionmaker()
-    session_factory.configure(bind=db_connection)
+    def add_note(self, note_title, note_contents, tag_name):
+        session = self.Session()
 
-    with session_factory() as session:
-        new_note = Note(note_title="Test", note_contents="TestTest", tag_id=0)
+        new_note = Notes(note_title=note_title, note_contents=note_contents)
+        new_tag = Tags(tag_name=tag_name)
+        new_note.tags.append(new_tag)
+
         session.add(new_note)
         session.commit()
+        session.close()
 
-if __name__ == "__main__":
-    main()
+db = Database()
+db.add_note('My Note','This is my note','Important')
