@@ -16,4 +16,4 @@
 - Tag names were added as doubles, when the name already existed while adding new notes.
 - I fixed the problem with the doubled tags.
 - Same problem occured in the update database. Fixed that too.
-- Started writing the main Console Application (as a minimum viable product). Finished View, Edit and Deleting of Notes
+- Started writing the main Console Application (as a minimum viable product). Finished View, Edit and Deleting of Notes.
