@@ -17,3 +17,7 @@
 - I fixed the problem with the doubled tags.
 - Same problem occured in the update database. Fixed that too.
 - Started writing the main Console Application (as a minimum viable product). Finished View, Edit and Deleting of Notes.
+
+## 2023-01-27
+- Coded the Write Note, added loops and breakpoints
+- Added new function in the database.py that returns the id of the last created note and modified the add_note function so that it returns the note_id of the newly created note.
