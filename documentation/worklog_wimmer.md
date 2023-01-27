@@ -21,3 +21,7 @@
 ## 2023-01-27
 - Coded the Write Note, added loops and breakpoints
 - Added new function in the database.py that returns the id of the last created note and modified the add_note function so that it returns the note_id of the newly created note.
+- Version 1.0.0 finished
+- Added Venv, Module and setup config and fixed a small bug in main.py that lead to the exit clause not working.
+- Added Testing Setup
+- Started Writing Tests (Last three are missing)

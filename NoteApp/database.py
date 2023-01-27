@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model import Base, Notes, Tags
+from NoteApp.model import Base, Notes, Tags
 
 class Database:
     def __init__(self):

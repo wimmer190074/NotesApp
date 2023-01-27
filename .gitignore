@@ -350,4 +350,8 @@ MigrationBackup/
 .ionide/
 
 # Dump Note
-dump.txt
+Dump.txt
+
+venv
+
+*.egg*

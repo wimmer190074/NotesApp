@@ -1,0 +1,17 @@
+def test_update_note():
+    db = Database()
+    db.__init__()
+    id = db.add_note("Test Title", "Test Contents")
+    db.update_note(id, "Updated Title", "Updated Contents")
+    note = db.get_note(id)
+    assert note.note_title == "Updated Title"
+    assert note.note_contents == "Updated Contents"
+    db.delete_note(id)
+
+def test_delete_note():
+    db = Database()
+    db.__init__()
+    id = db.add_note("Test Title", "Test Contents")
+    db.delete_note(id)
+    notes = db.get_notes()
+    assert len(notes) == 0
