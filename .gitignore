@@ -350,7 +350,7 @@ MigrationBackup/
 .ionide/
 
 # Dump Note
-Dump.txt
+dump.txt
 
 venv
 
