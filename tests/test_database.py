@@ -29,11 +29,19 @@ def test_get_notes():
     db.delete_note(id2)
 
 def test_update_note():
-    pass
+    db = Database()
+    db.__init__()
+    id = db.add_note("Test Title", "Test Contents")
+    db.update_note(id, "Updated Title", "Updated Contents")
+    note = db.get_note(id)
+    assert note.note_title == "Updated Title"
+    assert note.note_contents == "Updated Contents"
+    db.delete_note(id)
 
 def test_delete_note():
-    pass
-
-def test_get_last_created_note_id():
-    pass
-
+    db = Database()
+    db.__init__()
+    id = db.add_note("Test Title", "Test Contents")
+    db.delete_note(id)
+    notes = db.get_notes()
+    assert len(notes) == 0

@@ -15,3 +15,5 @@ def test_delete_note():
     db.delete_note(id)
     notes = db.get_notes()
     assert len(notes) == 0
+
+    

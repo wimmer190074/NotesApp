@@ -25,3 +25,7 @@
 - Added Venv, Module and setup config and fixed a small bug in main.py that lead to the exit clause not working.
 - Added Testing Setup
 - Started Writing Tests (Last three are missing)
+
+## 2023-02-02
+- Finished last three tests, noticed that the database needs to be completely empty for them to work. Need to fix that sometime. (never.. probably)
+- Started building the Tkinter gui, write notes works.
