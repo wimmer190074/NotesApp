@@ -7,9 +7,9 @@ class Database:
         self.engine = create_engine('sqlite:///notes_tags.db')
         Base.metadata.create_all(self.engine)
         self.Session = sessionmaker(bind=self.engine)
-
+    
     def add_note(self, _note_title, _note_contents, _tag_name = None):
-        session = self.Session()
+        session = self.Session()    
 
         if _tag_name is not None:
             # Check if Tag Name already exists
